@@ -34,7 +34,8 @@ public class PracticeFormTests {
                 day = "26",
                 subject = "Maths",
                 hobby = "Sports",
-                photo = "img/images.jpg",
+                folder = "img/",
+                photo = "images.jpg",
                 state = "Haryana",
                 city = "Panipat",
                 address = faker.address().fullAddress();
@@ -55,12 +56,12 @@ public class PracticeFormTests {
                .setBirthDate(day, month, year)
                .setSubject(subject)
                .setHobby(hobby)
-               .setPhoto(photo)
+               .setPhoto(folder + photo)
                .setAddress(address)
                .setState(state)
                .setCity(city)
                .setSubmit()
-               .checkForm("Name", expectedFullName)
+               .checkForm("Student Name", expectedFullName)
                .checkForm("Student Email", email)
                .checkForm("Gender", gender)
                .checkForm("Mobile", number)
